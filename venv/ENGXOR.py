@@ -1,13 +1,22 @@
+# def countOne(n):
+#     # count = 0
+#     if (n == 0):
+#         return 0
+#
+#     else:
+#         # if last bit set add 1 else
+#         # add 0
+#         return (n & 1) + countOne(n >> 1)
+#     # print(count)
 def countOne(n):
-    # count = 0
-    if (n == 0):
-        return 0
+    ones = 0
+    # print(n)
+    while n > 0:
+        ones = ones + int(n%2)
+        n = n/2
+    # print(ones)
+    return ones
 
-    else:
-        # if last bit set add 1 else
-        # add 0
-        return (n & 1) + countOne(n >> 1)
-    # print(count)
 
 t = int(input())
 
