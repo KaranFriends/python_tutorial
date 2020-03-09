@@ -1,13 +1,14 @@
 def countOne(n):
     count = 0
-    while (n):
-        n = n & (n - 1)
-        count += 1
-    # print(count)
-    if (count % 2 == 0):
-        return True
+    if (n == 0):
+        return 0
+
     else:
-        return False
+
+        # if last bit set add 1 else
+        # add 0
+        return (n & 1) + countOne(n >> 1)
+    # print(count)
 
 t = int(input())
 
@@ -16,12 +17,12 @@ while t > 0:
     m=int(m)
     n=int(n)
     f = list(map(int, input().strip().split()))[:m]
-    while n>0:
+    while n > 0:
         odd = 0
         even = 0
         p=int(input())
         for i in f:
-            if countOne(i^p):
+            if countOne(i+(p*(i+p))) % 2 == 0 :
                 even+=1
             else:
                 odd+=1
