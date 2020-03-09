@@ -1,10 +1,9 @@
 def countOne(n):
-    count = 0
+    # count = 0
     if (n == 0):
         return 0
 
     else:
-
         # if last bit set add 1 else
         # add 0
         return (n & 1) + countOne(n >> 1)
