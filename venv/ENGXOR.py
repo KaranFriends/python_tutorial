@@ -1,13 +1,26 @@
-# def countOne(n):
-#     # count = 0
-#     if (n == 0):
-#         return 0
-#
-#     else:
-#         # if last bit set add 1 else
-#         # add 0
-#         return (n & 1) + countOne(n >> 1)
-#     # print(count)
+import atexit, io, sys
+
+# A stream implementation using an in-memory bytes
+# buffer. It inherits BufferedIOBase.
+buffer = io.BytesIO()
+sys.stdout = buffer
+
+
+# print via here
+@atexit.register
+def write():
+    sys.__stdout__.write(buffer.getvalue())
+
+
+#####################################
+# template ends
+
+# normal method followed
+# input N
+# n = int(raw_input())
+
+# input the array
+
 def countOne(n):
     ones = 0
     # print(n)
@@ -24,7 +37,8 @@ while t > 0:
     m, n=input().split()
     m=int(m)
     n=int(n)
-    f = list(map(int, input().strip().split()))[:m]
+    f = [int(x) for x in input().split()]
+    # f = list(map(int, input().strip().split()))[:m]
     while n > 0:
         odd = 0
         even = 0
