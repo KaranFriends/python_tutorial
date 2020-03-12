@@ -16,9 +16,9 @@ def main():
     def countOne(n):
         ones = 0
         # print(n)
-        while n > 0:
-            ones = ones + int(n%2)
-            n = n/2
+        while n:
+            n &= (n - 1)
+            ones += 1
         # print(ones)
         return ones
 
@@ -27,17 +27,17 @@ def main():
 
     while t > 0:
         m, n = stdin.readline().split()
-        m=int(m)
+        # m=int(m)
         n=int(n)
-        f = [int(x) for x in stdin.readline().split()]
+        f = [int(m) for m in stdin.readline().split()]
         # f = list(map(int, input().strip().split()))[:m]
         while n > 0:
             odd = 0
             even = 0
-            p=int(input())
+            p = int(input())
             for i in f:
-                if countOne(i+(p*(i+p))) % 2 == 0 :
-                    even+=1
+                if countOne(i^p) % 2 == 0 :
+                    even += 1
                 else:
                     odd+=1
             stdout.write(even.__str__()+" "+odd.__str__())
