@@ -1,37 +1,39 @@
+# cook your dish here
 from sys import stdin, stdout
 
 def freq(str,k,x):
-    print(str, k , x)
-    # break the string into list of words
-    str = list(str)
-    str2 = []
-    print(str)
-    # loop till string values present in list str
-    # for i in str:
-
-        # # checking for the duplicacy
-        # if i not in str2:
-        #     # insert value in str2
-        #     str2.append(i)
-
-    for i in str:
-        print(i, str2.count(i)+1, str2)
-        if (str2.count(i) + 1) <= x:
-            str2.append(i)
-        else:
-            if k==0:
-                print(str2)
-                return len(set(str2))
-            else:
+    str = list(str.rstrip())
+    # print(str)
+    str2 = [0]*26
+    ans=0
+    for i in range(str.__len__()):
+        temp=ord(str[i]) - ord("a")
+        # print(temp)
+        str2[temp]+=1
+        if str2[temp] > x:
+            # print("test")
+            if k>0:
                 k-=1
-                str2.append(i)
+                str2[temp]-=1
+            else:
+                print(ans)
+                return 0
+        else:
+            ans+=1
+
+    print(ans)
+    return 0
 
 
-t = int(stdin.readline())
-while t > 0:
-    t -= 1
-    str = stdin.readline()
-    k, x = stdin.readline().split()
-    k = int(k)
-    x = int(x)
-    print(freq(str, k, x))
+def main():
+    t = int(stdin.readline())
+    while t > 0:
+        t -= 1
+        str = stdin.readline()
+        k, x = stdin.readline().split()
+        freq(str, int(k), int(x))
+
+
+
+if __name__ == "__main__":
+    main()
