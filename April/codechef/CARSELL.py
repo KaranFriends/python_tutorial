@@ -15,6 +15,7 @@ while tt>0:
     for i in range(t):
         e=-q.get()-temp
         if e<=0:
+
             continue
         else:
             ans=ans+e
