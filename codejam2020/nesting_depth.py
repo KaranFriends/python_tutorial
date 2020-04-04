@@ -31,14 +31,14 @@ while ii < T:
         elif temp == pre:
             ans+=str(temp)
         elif temp > pre:
-            for i in range(pre):
+            for i in range(temp-pre):
                 # stack.pop()
-                ans = ans+")"
-                open -= 1
-            for i in range(temp):
-                # stack.append("(")
                 ans = ans+"("
                 open += 1
+            # for i in range(temp):
+            #     # stack.append("(")
+            #     ans = ans+"("
+            #     open += 1
             ans = ans+str(temp)
             pre = temp
         else:
