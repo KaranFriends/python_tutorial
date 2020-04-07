@@ -1,8 +1,4 @@
-from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
-from matplotlib import style
-import numpy as np
-
 import math
 
 
@@ -33,25 +29,22 @@ def print_factors(x):
     return li
 
 
-style.use('ggplot')
-fig = plt.figure()
-ax1 = fig.add_subplot(111, projection='3d')
-x,y,z=[],[],[]
-for i in range(2, 100):
-    # print(i)
-    # print(len(print_factors(i)), len(primeFactors(i)))
-    z.append(i)
-    y.append(len(print_factors(i)))
-    x.append(len(primeFactors(i)))
 
-print(x)
-print(y)
-print(z)
-# ax1.plot_wireframe(x, y, z)
-#
-# # setting the labels
-# ax1.set_xlabel('x-axis')
-# ax1.set_ylabel('y-axis')
-# ax1.set_zlabel('z-axis')
-#
-# plt.show()
+x,y=[],[]
+for i in range(2, 100):
+    # z.append(i)
+    x.append(len(print_factors(i)))
+    y.append(len(primeFactors(i)))
+
+plt.plot(x, y)
+
+# naming the x axis
+plt.xlabel('x - axis')
+# naming the y axis
+plt.ylabel('y - axis')
+
+# giving a title to my graph
+plt.title('My first graph!')
+
+
+plt.show()
