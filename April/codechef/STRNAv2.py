@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import math
 
 
@@ -31,20 +31,24 @@ def print_factors(x):
 
 
 x,y=[],[]
-for i in range(2, 100):
+ss=0
+for i in range(2, 1000000):
+    ss=len(set(x))
     # z.append(i)
-    x.append(len(print_factors(i)))
-    y.append(len(primeFactors(i)))
-
-plt.plot(x, y)
-
-# naming the x axis
-plt.xlabel('x - axis')
-# naming the y axis
-plt.ylabel('y - axis')
-
-# giving a title to my graph
-plt.title('My first graph!')
-
-
-plt.show()
+    size = len(print_factors(i))
+    x.append(len(primeFactors(i)))
+    rrr=set(x)
+    if len(rrr) - ss == 1:
+        print(size, len(rrr))
+# plt.plot(x, y)
+#
+# # naming the x axis
+# plt.xlabel('x - axis')
+# # naming the y axis
+# plt.ylabel('y - axis')
+#
+# # giving a title to my graph
+# plt.title('My first graph!')
+#
+#
+# plt.show()
