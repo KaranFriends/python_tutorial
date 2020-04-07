@@ -30,26 +30,19 @@ def print_factors(x):
 
 
 
-x,y=[],[]
-ss=0
-for i in range(2, 100):
-    ss=len(set(x))
-    # z.append(i)
-    size = len(print_factors(i))
-    x.append(len(primeFactors(i)))
-    rrr=set(x)
-    if len(rrr) - ss == 1:
-        print(size, len(rrr))
+kk=1
+ss={1 : [],2 : [],3 : [],4 : [],5 : [],6 : [],7 : [],8 : []}
+for i in range(2, 100000):
+    print(kk)
+    kk+=1
+    x = len(print_factors(i))
+    k = len(primeFactors(i))
+    ss[k].append(x)
+    # e = ss.get(k)
+    # print(e)
+    # e.append(x)
+    # e=set(e)
+    # ss[k] = e
 
-# plt.plot(x, y)
-#
-# # naming the x axis
-# plt.xlabel('x - axis')
-# # naming the y axis
-# plt.ylabel('y - axis')
-#
-# # giving a title to my graph
-# plt.title('My first graph!')
-#
-#
-# plt.show()
+for i in range(1,9):
+    print(sorted(set(ss.get(i))))
