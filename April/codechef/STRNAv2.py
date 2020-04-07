@@ -32,7 +32,7 @@ def print_factors(x):
 
 x,y=[],[]
 ss=0
-for i in range(2, 1000000):
+for i in range(2, 100):
     ss=len(set(x))
     # z.append(i)
     size = len(print_factors(i))
@@ -40,6 +40,7 @@ for i in range(2, 1000000):
     rrr=set(x)
     if len(rrr) - ss == 1:
         print(size, len(rrr))
+
 # plt.plot(x, y)
 #
 # # naming the x axis
