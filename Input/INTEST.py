@@ -1,6 +1,6 @@
 from sys import stdin,stdout
 
-t = int(stdin.readline())
+t = int(stdin.readline().rstrip())
 while t > 0:
     t -= 1
 
