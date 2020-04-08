@@ -1,5 +1,5 @@
 class Solution:
-    def isHappy(n: int) -> bool:
+    def isHappy(self,n: int) -> bool:
         track =[]
         while True:
             print(n)
