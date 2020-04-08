@@ -1,7 +1,8 @@
 class Solution:
-    def isHappy(self, n: int) -> bool:
+    def isHappy(n: int) -> bool:
         track =[]
         while True:
+            print(n)
             if track.count(n) > 1:
                 return False
             else :
@@ -11,4 +12,8 @@ class Solution:
                     s = [ int(i) for i in str(n)]
                     n=0
                     for i in s:
-                       n += i*i
+                        n += i*i
+                    track.append(n)
+
+sol = Solution
+sol.isHappy(input())
